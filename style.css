@@ -1,0 +1,351 @@
+* {
+    box-sizing: border-box;
+    /* Inclui padding e border na largura e altura totais dos elementos */
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove padding padrão */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Define uma fonte padrão */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Habilita rolagem  da tela suave para âncoras */
+}
+
+:root {
+    /* Variáveis de cores personalizadas */
+    --primaria: #4f46e5;
+    /* Cor primária */
+    --secundaria: #7c3aed;
+    /* Cor secundária */
+    --escuro: #0f172a;
+    /* Cor escura */
+    --maisEscuro: #0a0f1c;
+    /* Cor mais escura */
+    --claro: #e2e8f0;
+    /* Cor clara */
+    --vidro: rgba(255, 255, 255, 0.1);
+    /* Cor vidro */
+}
+
+body {
+    background-color: var(--escuro);
+    /* Define a cor de fundo do corpo */
+    color: var(--claro);
+    /* Define a cor do texto padrão */
+}
+
+.navegacao {
+    position: fixed;
+    /* Fixa a navegação no topo da página */
+    background: rgba(15, 23, 42, 0.8);
+    /* Fundo semi-transparente */
+    width: 100%;
+    /* Largura total */
+    z-index: 100;
+    /* Garante que a navegação fique acima de outros elementos */
+    padding: 1.5rem;
+    /* Espaçamento interno */
+    top: 0;
+    /* Posiciona no topo */
+}
+
+.menu {
+    display: flex;
+    /* Usa flexbox para layout */
+    list-style: none;
+    /* Remove marcadores de lista */
+    gap: 3rem;
+    /* Espaçamento entre os itens */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+}
+
+.menu-link {
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    color: var(--claro);
+    /* Cor do texto dos links */
+    font-weight: 500;
+    /* Peso da fonte */
+    position: relative;
+    padding: 0.5rem 0;
+    /* Espaçamento interno */
+}
+
+.menu-link::after {
+    /* Adiciona um efeito de sublinhado animado */
+    content: '';
+    height: 2px;
+    /* Altura da linha */
+    width: 0;
+    /* Largura inicial da linha */
+    position: absolute;
+    /* Posição absoluta */
+    bottom: 0;
+    /* Posiciona na parte inferior do link */
+    left: 0;
+    /* Alinha à esquerda */
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    /* Gradiente de cores */
+    transition: width 0.5s;
+    /* Animação suave */
+    ;
+
+}
+
+.menu-link:hover::after {
+    /* Efeito ao passar o mouse */
+    width: 100%;
+    /* Expande a linha para a largura total do link */
+    transition: width 0.5s ease-in-out;
+    /* Animação suave */
+}
+
+.foto-perfil {
+    width: 350px;
+    /* Largura da foto de perfil */
+    height: 350px;
+    /* Altura da foto de perfil */
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    /* Sombra ao redor da foto */
+    border-radius: 60%;
+    /* Borda arredondada */
+    border: 5px solid var(--vidro);
+    /* Borda com efeito vidro */
+    animation: flutuar 5s ease-in-out infinite; /* Animação de flutuar  feito com o @key*/
+}
+
+.cabecalho {
+    min-height: 100vh;
+    /* Altura mínima da seção igual à altura da tela */
+    display: flex;
+    /* Usa flexbox para layout */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    flex-direction: column;
+    /* Alinha os itens em coluna */
+}
+
+h1 {
+    font-size: 3.5rem;
+    /* Tamanho da fonte do título */
+    color: var(--primaria);
+    /* Cor do título */
+    font-weight: bold;
+    /* Peso da fonte */
+    margin: 20px;
+
+}
+
+.cabecalho-sub-titulo {
+    font-size: 1.5rem;
+    /* Tamanho da fonte do subtítulo */
+    color: var(--claro);
+    /* Cor do subtítulo */
+}
+
+.sobre {
+    padding: 6rem 2rem;
+    /* Espaçamento interno da seção sobre */
+}
+
+.sobre-titulo {
+    font-size: 2.5rem;
+    /* Tamanho da fonte do título */
+    color: var(--claro);
+    /* Cor do título */
+    text-align: center;
+    /* Centraliza o texto */
+    margin-bottom: 20px;
+    /* Espaçamento abaixo do título */
+}
+
+.sobre-caixa {
+    padding: 2rem;
+    /* Espaçamento interno da caixa sobre */
+    max-width: 800px;
+    /* Largura máxima da caixa */
+    margin: 0 auto;
+    /* Centraliza a caixa horizontalmente */
+    border-radius: 16px;
+    /* Borda arredondada */
+    border: 1px solid var(--vidro);
+    /* Borda com efeito vidro */
+    backdrop-filter: blur(10px);
+    /* Efeito de desfoque no fundo */
+    background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente */
+
+}
+
+.sobre-paragrafo {
+    text-align: center;
+    /* Centraliza o texto */
+    font-size: 1.2rem;
+    /* Tamanho da fonte do parágrafo */
+}
+
+.projetos {
+    padding: 6rem 2rem;
+    /* Espaçamento interno da seção de projetos */
+}
+
+.projetos-titulo {
+    text-align: center;
+    /* Centraliza o texto */
+    font-size: 2.5rem;
+    /* Tamanho da fonte do título */
+    margin-bottom: 50px;
+    /* Espaçamento abaixo do título */
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    /* Sombra ao passar o mouse */
+    transform: translateY(-10px) scale(1.03);
+    /* Move o título para cima */
+    transition: all 0.3s ease;
+    /* Animação suave */
+    ;
+    cursor: pointer;
+    /* Muda o cursor para indicar interatividade */
+}
+
+.projetos-caixa {
+    display: grid;
+    /* Usa grid para layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Define colunas responsivas */
+    gap: 2rem;
+    /* Espaçamento entre os itens */
+    max-width: 1200px;
+    /* Largura máxima da caixa de projetos */
+    margin: 0 auto;
+    /* Centraliza a caixa horizontalmente */
+}
+
+.projetos-imagem {
+    height: 200px;
+    /* Altura da imagem do projeto */
+    width: 100%;
+    /* Largura total da imagem do projeto */
+    object-fit: cover;
+    /* Cobre toda a área da imagem */
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    /* Fundo semi-transparente */
+    border-radius: 16px;
+    /* Borda arredondada */
+    backdrop-filter: blur(5px);
+    /* Efeito de desfoque no fundo */
+    border: 1px solid var(--vidro);
+    /* Borda com efeito vidro */
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassa os limites */
+}
+
+
+.caixa-textos-projeto {
+    padding: 1.5rem;
+    /* Espaçamento interno da caixa de textos do projeto */
+}
+
+.paragrafo-projetos {
+    color: rgba(226, 232, 240, 0.8);
+    /* Cor do texto das informações do projeto */
+    line-height: 1.25rem;
+    /* Altura da linha */
+
+}
+
+.info-projetos {
+    margin-bottom: 5px;
+    /* Espaçamento abaixo do título do projeto */
+}
+
+
+
+.contatos-titulos {
+    text-align: center; /* Centraliza o texto */
+    font-size: 2.5rem; /* Tamanho da fonte do título */
+    margin-bottom: 50px; /* Espaçamento abaixo do título */
+}
+
+.formulario-contato {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    border-radius: 16px; /* Borda arredondada */
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+    padding: 2rem; /* Espaçamento interno do formulário */
+    border: 1px solid var(--vidro); /* Borda com efeito vidro */
+}
+
+
+
+.grupo-form {
+    margin-bottom: 1.5rem; /* Espaçamento abaixo de cada grupo de formulário */
+}
+
+.campo-form {
+    width: 100%; /* Largura total do campo */
+    padding: 1rem; /* Espaçamento interno do campo */
+    border: 1px solid var(--vidro); /* Borda com efeito vidro */
+    border-radius: 8px; /* Borda arredondada */
+    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    color: var(--claro); /* Cor do texto */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.campo-form:focus {
+    border-color: var(--secundaria); /* Muda a cor da borda ao focar */
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3); /* Adiciona uma sombra ao focar */
+
+}
+
+.botao-form {
+    color: var(--claro); /* Cor do texto do botão */
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* Fundo com gradiente */
+    padding: 1rem 2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    font-weight: bold; /* Peso da fonte */  
+    width: 100%; /* Largura total do botão */   
+    translate: all 0.5s ease; /* Animação suave */
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); /* Adiciona uma sombra ao passar o mouse */
+}
+
+.particulas {
+    position: fixed;
+    top: 0; /* Posiciona no topo */
+    left: 0; /* Posiciona à esquerda */ 
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    z-index: -1; /* Coloca atrás de outros elementos */
+    opacity: 0.5; /* Define a opacidade */
+    background: 
+        radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+        var(--maisEscuro); /* Fundo com partículas coloridas */
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+    <!--Menu Superior primeiro navegação vou utilizar o nav-->
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- agora vai ser criada a parte principal então vamos destacar com a tag main -->
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="./img/perfil.png" alt="Foto de Perfil Lucas Lima" class="foto-perfil">
+        <h1>Lucas Lima</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End em Construção</p>
+
+    </main>
+    <!--agora será criada uma seção que seria o sobre mim -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Meu nome é Lucas Lima, sou um desenvolvedor front-end apaixonado por criar experiências
+                digitais incríveis. Tenho experiência em HTML, CSS e JavaScript, e estou sempre buscando aprender
+                novas tecnologias e aprimorar minhas habilidades.
+            </p>
+        </div>
+    </section>
+
+    <!--agora será criada a seção de projetos-->
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="./img/loja.png" alt="Projetoloja" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Loja Semi-Jóias</h3>
+                    <p class="paragrafo-projetos">Uma loja online de semi-jóias, com Brincos, Correntes, Aparadores e
+                        afins.
+                    </p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/cartao.png" alt="Seguranca" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Empresa de Segurança</h3>
+                    <p class="paragrafo-projetos">Uma pagina aonde contem um cartão de visitias criado somente com HTML
+                        e
+                        CSS.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/portfolio.png" alt="Curriculo" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">Pagina De Portfólio</h3>
+                    <p class="paragrafo-projetos">Uma pagina construida afim de ser um curriclo on-line.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--agora será criada a seção de formulários utilizando o form-->
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulos">Entre em Contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea placeholder="Digite sua Mensagem" class="campo-form" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+        </form>
+
+    </section>
+
+
+    <script>
+
+        function enviarWhats(event) { // Função para enviar mensagem via WhatsApp
+            event.preventDefault(); // Evita o envio padrão do formulário no caso recarregar a tela
+
+            const nome = document.getElementById('nome'); // Campo de nome
+            const mensagem = document.getElementById('mensagem'); // Campo de mensagem
+            const telefone = '5543988138581'; // Substitua pelo seu número de telefone com código do país
+
+            const texto = ` Olá, meu nome é ${nome.value}. ${mensagem.value}`; // Mensagem formatada
+            const msgFormatada = encodeURIComponent(texto); // Codifica a mensagem para URL possibilitando espaçamento no texto
+
+            const url = `http://wa.me/${telefone}?text=${msgFormatada}`; // URL do WhatsApp com mensagem
+
+            window.open(url, '_blank'); // Abre o WhatsApp em uma nova aba
+        }
+
+        // console.log("url aberto com sucesso");
+
+    </script>
+</body>
+
+</html>
