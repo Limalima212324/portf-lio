@@ -349,3 +349,27 @@ h1 {
         transform: translateY(-20px);
     }
 }
+
+.ver-mais {
+    color: var(--claro); /* Cor do texto do botão */
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria)); /* Fundo com gradiente */
+    padding: 1rem 2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    font-weight: bold; /* Peso da fonte */  
+    width: 50%; /* Largura do botão */   
+    transition: all 0.5s ease; /* Animação suave */
+    font-size: 15px;
+    text-decoration: none; /* Remove sublinhado sempre */
+}
+
+.ver-mais:hover {
+    text-decoration: none; /* Garante que não apareça no hover */
+    transform: translateY(-4px); /* Move o botão para cima */
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); /* Sombra */
+}
+
+.ver-mais:hover a {
+    text-decoration: none;
+}
