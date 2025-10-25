@@ -364,12 +364,19 @@ h1 {
     text-decoration: none; /* Remove sublinhado sempre */
 }
 
-.ver-mais:hover {
+.ver-mais:hover a {
     text-decoration: none; /* Garante que não apareça no hover */
     transform: translateY(-4px); /* Move o botão para cima */
     box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4); /* Sombra */
 }
 
-.ver-mais:hover a {
-    text-decoration: none;
+.ver-mais a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: var(--claro); /* Mantém a mesma cor do texto */
+    display: inline-block; /* Permite aplicar padding e alinhamento */
+}
+
+.ver-mais a:hover {
+    text-decoration: none; /* Garante que não apareça no hover */
+    color: var(--claro); /* Mantém a cor no hover */
 }
