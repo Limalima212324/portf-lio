@@ -70,8 +70,8 @@ body {
     /* Cor do texto dos links */
     font-weight: 500;
     /* Peso da fonte */
-    position: relative;
-    padding: 0.5rem 0;
+    position: relative; /* Necessário para o efeito de sublinhado */
+    padding: 0.5rem 0; /* Espaçamento interno */
     /* Espaçamento interno */
 }
 
